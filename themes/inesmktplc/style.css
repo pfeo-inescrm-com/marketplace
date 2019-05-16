@@ -11227,7 +11227,7 @@ span.counter {
 
 .footer-area a {
   color: #FFF; }
-.footer-area .widget_custom_html::not(::last-child) {
+.footer-area .widget_custom_html::not(:last-child) {
   margin-bottom: 20px; }
 
 /*--------------------------------------------------------------
@@ -11512,4 +11512,5 @@ body.search {
 /*--------------------------------------------------------------
 # Media Queries
 --------------------------------------------------------------*/
+
 /*# sourceMappingURL=style.css.map */

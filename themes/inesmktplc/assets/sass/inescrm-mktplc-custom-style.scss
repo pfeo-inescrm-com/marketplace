@@ -78,7 +78,7 @@ $facebookColor: #516ca4;
     color: $white;
   }
 
-  .widget_custom_html::not(::last-child) {
+  .widget_custom_html::not(:last-child) {
     margin-bottom: 20px;
   }
 }
