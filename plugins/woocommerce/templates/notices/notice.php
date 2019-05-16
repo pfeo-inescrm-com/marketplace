@@ -25,8 +25,6 @@ if ( ! $messages ) {
 
 ?>
 
-
-
 <?php foreach ( $messages as $message ) : ?>
 	<div class="woocommerce-info">
 		<?php
