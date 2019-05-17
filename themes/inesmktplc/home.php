@@ -1,3 +1,8 @@
+<?php
+//get the shop page url to use it in link below
+$shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
+?>
+
 <?php get_header(); ?>
 
 <?php
@@ -34,7 +39,7 @@
                             <?php //_e('Discover in video', 'inesmktplc') ?> -->
                             <!-- Découvrir en vidéo -->
                         </a>
-                        <a href="#" class="btn btn--white btn--lg btn--round">
+                        <a href="<?php echo $shop_page_url; ?>" class="btn btn--white btn--lg btn--round">
                             <?php _e('Integration catalogue', 'inesmktplc') ?>
                             <!-- Catalogue d'intégrations -->
                         </a>

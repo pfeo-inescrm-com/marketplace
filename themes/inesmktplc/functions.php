@@ -247,26 +247,26 @@ function inesmktplc_get_the_term_list_first_result($id, $taxonomy)
  * hide login page
  * to prevent attacks
  */
-function redirect_to_nonexistent_page(){
+function redirect_to_nonexistent_page()
+{
 
-  $new_login=  'newlogin';
- if(strpos($_SERVER['REQUEST_URI'], $new_login) === false){
-             wp_safe_redirect( home_url( 'access-denied' ), 302 );
-   exit(); 
- }
+  $new_login =  'newlogin';
+  if (strpos($_SERVER['REQUEST_URI'], $new_login) === false) {
+    wp_safe_redirect(home_url('access-denied'), 302);
+    exit();
+  }
 }
-add_action( 'login_head', 'redirect_to_nonexistent_page');
+add_action('login_head', 'redirect_to_nonexistent_page');
 
-function redirect_to_actual_login(){
-
-$new_login =  'newlogin';
-if(parse_url($_SERVER['REQUEST_URI'],PHP_URL_QUERY) == $new_login&& ($_GET['redirect'] !== false)){     
-              wp_safe_redirect(home_url("wp-login.php?$new_login&redirect=false"));
-  exit();
-
+function redirect_to_actual_login()
+{
+  $new_login =  'newlogin';
+  if (parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY) == $new_login && ($_GET['redirect'] !== false)) {
+    wp_safe_redirect(home_url("wp-login.php?$new_login&redirect=false"));
+    exit();
+  }
 }
-}
-add_action( 'init', 'redirect_to_actual_login');
+add_action('init', 'redirect_to_actual_login');
 
 
 // redirect user to homepage after login
@@ -277,8 +277,9 @@ function redirect_upon_login()
   exit();
 }
 // redirect user to homepage after logout
-add_action('wp_logout','auto_redirect_after_logout');
-function auto_redirect_after_logout(){
-  wp_redirect( home_url() );
+add_action('wp_logout', 'auto_redirect_after_logout');
+function auto_redirect_after_logout()
+{
+  wp_redirect(home_url());
   exit();
 }
