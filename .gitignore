@@ -12389,3 +12389,4 @@ plugins/woocommerce/templates/single-product/tabs/tabs.php
 plugins/wordpress-importer/parsers.php
 plugins/wordpress-importer/readme.txt
 plugins/wordpress-importer/wordpress-importer.php
+themes/twentynineteen/style.css.map
