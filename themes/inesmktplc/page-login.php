@@ -42,7 +42,7 @@ get_template_part('template-parts/breadcrum-area-fullwidth');
 									_e('<strong>Oh snap!</strong> Invalid username and/or password.', 'inesmktplc');
 								} elseif ($login === "empty") {
 									_e('<strong>Oh snap!</strong> Username and/or Password is empty.', 'inesmktplc');
-								} elseif ($login === false) {
+								} elseif ($login === "false") {
 									_e('<strong>Oh snap!</strong> You are logged out.', 'inesmktplc');
 								}
 								?>

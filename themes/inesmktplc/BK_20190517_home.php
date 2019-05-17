@@ -16,7 +16,7 @@
 
 <?php
 //get the shop page url to use it in link below
-$shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
+$shop_page_url = get_permalink(wc_get_page_id('shop'));
 ?>
 
 <?php get_header(); ?>
@@ -32,7 +32,12 @@ $shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
     =================================-->
 <section class="about_hero bgimage">
     <div class="bg_image_holder">
-        <img src="<?php echo get_template_directory_uri() . '/assets/images/57342418_l.png';  ?>" alt="background image">
+        <?php if (has_post_thumbnail()) {
+            the_post_thumbnail();
+        } else { ?>
+            <img src="<?php echo get_template_directory_uri() . '/assets/images/57342418_l.png';  ?>" alt="<?php _e('home background image', 'inesmktplc'); ?>">
+        <?php } ?>
+
     </div>
 
     <div class="container content_above">
@@ -43,7 +48,7 @@ $shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
                     <!-- Bienvenue sur la Marketplace INES ! -->
                     <?php if (function_exists('the_subtitle')) : ?>
                         <!-- WP Subtitle Plugin needed for this to work
-                                    https://wordpress.org/plugins/wp-subtitle/ -->
+                                        https://wordpress.org/plugins/wp-subtitle/ -->
                         <p><?php the_subtitle(); ?></p>
                     <?php else : ?>
                         <p><?php _e('Simply connect your <span>CRM</span> to your Tools', 'inesmktplc') ?></p>
@@ -51,9 +56,11 @@ $shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
                     <!-- Connectez simplement votre CRM à vos Outils -->
                     <div class="about_hero_btns">
                         <!-- <a href="#" class="play_btn" data-toggle="modal" data-target="#myModal">
-                            <img src="<?php //echo get_template_directory_uri() . '/assets/images/play_btn.png';  ?>" alt="pLay button">
-                            <?php //_e('Discover in video', 'inesmktplc') ?> -->
-                            <!-- Découvrir en vidéo -->
+                            <img src="<?php 
+                                        ?>" alt="pLay button">
+                            <?php 
+                            ?> -->
+                        <!-- Découvrir en vidéo -->
                         </a>
                         <a href="<?php echo $shop_page_url; ?>" class="btn btn--white btn--lg btn--round">
                             <?php _e('Integration catalogue', 'inesmktplc') ?>
