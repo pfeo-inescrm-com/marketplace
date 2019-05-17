@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: INES CRM Marketplace\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-05-15 12:41+0000\n"
+"POT-Creation-Date: 2019-05-17 19:25+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -23,20 +23,25 @@ msgstr ""
 msgid "Back to Home"
 msgstr ""
 
-#: footer.php:183
-msgid "All rights reserved"
+#: BK_20190517_home.php:38 page-home.php:34
+msgid "home background image"
 msgstr ""
 
-#: home.php:22
+#: BK_20190517_home.php:47 page-home.php:43
 msgid "Welcome to INES Marketplace!"
 msgstr ""
 
-#: home.php:29 template-parts/header-search-fullwidth.php:42
+#: BK_20190517_home.php:54 page-home.php:50
+#: template-parts/header-search-fullwidth.php:42
 msgid "Simply connect your <span>CRM</span> to your Tools"
 msgstr ""
 
-#: home.php:39
+#: BK_20190517_home.php:66 page-home.php:62
 msgid "Integration catalogue"
+msgstr ""
+
+#: footer.php:183
+msgid "All rights reserved"
 msgstr ""
 
 #. Name of the template
@@ -71,28 +76,24 @@ msgstr ""
 msgid "Leave Your Messages"
 msgstr ""
 
-#: page-contact.php:100
-msgid "First Name"
+#. Name of the template
+msgid "Home"
 msgstr ""
 
-#: page-contact.php:106
-msgid "Last Name"
+#. Name of the template
+msgid "Login"
 msgstr ""
 
-#: page-contact.php:114
-msgid "Email"
+#: page-login.php:42
+msgid "<strong>Oh snap!</strong> Invalid username and/or password."
 msgstr ""
 
-#: page-contact.php:120
-msgid "Phone"
+#: page-login.php:44
+msgid "<strong>Oh snap!</strong> Username and/or Password is empty."
 msgstr ""
 
-#: page-contact.php:125
-msgid "Your text here"
-msgstr ""
-
-#: page-contact.php:129
-msgid "Send"
+#: page-login.php:46
+msgid "<strong>Oh snap!</strong> You are logged out."
 msgstr ""
 
 #. Name of the template
@@ -171,19 +172,19 @@ msgstr ""
 msgid "INES Marketplace sidebar for product filtering in shop page"
 msgstr ""
 
-#: template-parts/author-area-cart.php:88
+#: template-parts/author-area-cart.php:99
 msgid "Sub-total :"
 msgstr ""
 
-#: template-parts/author-area-cart.php:96
+#: template-parts/author-area-cart.php:107
 msgid "View Cart"
 msgstr ""
 
-#: template-parts/author-area-cart.php:99
+#: template-parts/author-area-cart.php:110
 msgid "Checkout"
 msgstr ""
 
-#: template-parts/author-area-cart.php:108
+#: template-parts/author-area-cart.php:119
 msgid "Your cart is empty"
 msgstr ""
 
@@ -191,15 +192,20 @@ msgstr ""
 msgid "Members Area Login"
 msgstr ""
 
-#: template-parts/call-to-action-fullwidth.php:14
+#: template-parts/call-to-action-fullwidth.php:16
 msgid "Do you want to join our Marketplace?"
 msgstr ""
 
-#: template-parts/call-to-action-fullwidth.php:18
+#: template-parts/call-to-action-fullwidth.php:20
 msgid "Increase efficiency. Get the most out of your tools in a few clicks."
 msgstr ""
 
-#: template-parts/call-to-action-fullwidth.php:22
+#: template-parts/call-to-action-fullwidth.php:23
+msgctxt "url"
+msgid "contact-us"
+msgstr ""
+
+#: template-parts/call-to-action-fullwidth.php:24
 msgid "Contact us"
 msgstr ""
 
@@ -257,11 +263,11 @@ msgid ""
 msgstr ""
 
 #. URI of the theme
-msgid "http://(set%20github%20repo%20here)"
+msgid "https://github.com/pfeo-inescrm-com/marketplace"
 msgstr ""
 
 #. Author of the theme
-msgid "INES CRM team | Pablo Feo Acosta"
+msgid "INES CRM team | pfeo"
 msgstr ""
 
 #. Author URI of the theme

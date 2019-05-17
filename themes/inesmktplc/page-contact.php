@@ -93,50 +93,12 @@
                             <div class="row">
                                 <div class="col-md-8 offset-md-2">
                                     <div class="contact_form--wrapper">
-                                        <!-- <form action="<?php the_permalink(); ?>" id="contact-form" method="post">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <input type="text" name="contact-first-name" id="contact-first-name" placeholder="<?php _e('First Name', 'inesmktplc'); ?>">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <input type="text" name="contact-last-name" id="contact-last-name" placeholder="<?php _e('Last Name', 'inesmktplc'); ?>">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <input type="email" name="contact-email" id="contact-email" placeholder="<?php _e('Email', 'inesmktplc'); ?>">
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <input type="tel" name="contact-phone" id="contact-phone" placeholder="<?php _e('Phone', 'inesmktplc'); ?>">
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            <textarea cols="30" rows="10" name="contact-comments" id="contact-comments" placeholder="<?php _e('Your text here', 'inesmktplc'); ?>"></textarea>
-
-                                            <div class="sub_btn">
-                                                <button type="submit" class="btn btn--round btn--default">
-                                                    <?php _e('Send', 'inesmktplc'); ?>
-                                                </button>
-                                            </div>
-                                            <input type="hidden" name="submitted" id="submitted" value="true" />
-                                        </form> -->
                                         <?php
                                         /**
                                          * Ninja Forms plugin
                                          * required
                                          */
-                                        echo do_shortcode('[ninja_form id=1]');
+                                        echo do_shortcode('[ninja_form id=2]');
                                         ?>
                                     </div>
                                 </div>

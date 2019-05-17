@@ -1,4 +1,6 @@
-<?php ?>
+<?php
+$home_url = home_url('/'); 
+?>
 <!--================================
     START CALL TO ACTION AREA
     =================================-->
@@ -18,7 +20,7 @@
                         <?php _e('Increase efficiency. Get the most out of your tools in a few clicks.', 'inesmktplc'); ?>
                     <!-- Gagnez en efficacité. Tirez le meilleur de vos outils en quelques clics. -->
                     </h4>
-                    <a href="<?php echo esc_url( home_url( '/contact' ) );  ?>" class="btn btn--lg btn--round btn--white callto-action-btn">
+                    <a href="<?php echo $home_url . _x('contact-us', 'url', 'inesmktplc');  ?>" class="btn btn--lg btn--round btn--white callto-action-btn">
                         <?php _e('Contact us', 'inesmktplc'); ?>
                     <!-- Contactez-nous -->
                     </a>
