@@ -42,7 +42,7 @@ include(get_template_directory() . '/inc/inesmktplc-register-required-plugins.ph
 // for theme
 add_action('wp_enqueue_scripts', 'inesmktplc_enqueue');
 // for login page
-add_action( 'login_enqueue_scripts', 'inesmktplc_enqueue_login' );
+add_action('login_enqueue_scripts', 'inesmktplc_enqueue_login');
 
 // initial theme setup
 add_action('after_setup_theme', 'inesmktplc_setup_theme');
@@ -258,15 +258,55 @@ function inesmktplc_redirect_to_nonexistent_page()
 }
 add_action('login_head', 'inesmktplc_redirect_to_nonexistent_page');
 
+
+/**
+ * send users to custom login url
+ */
 function inesmktplc_redirect_to_actual_login()
 {
   $new_login =  'newlogin';
   if (parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY) == $new_login && ($_GET['redirect'] !== false)) {
-    wp_safe_redirect(home_url("wp-login.php?$new_login&redirect=false"));
+    wp_safe_redirect(home_url("login?$new_login&redirect=false"));
     exit();
   }
 }
 add_action('init', 'inesmktplc_redirect_to_actual_login');
+
+/**
+ * if login fails
+ * redirect to custom login page
+ */
+// not working
+// TODO: revise it
+// function inesmktplc_redirect_if_login_fails()
+// {
+//   $new_login =  'newlogin';
+//   if (parse_url($_SERVER['REQUEST_URI'], PHP_URL_QUERY) == $new_login && ($_GET['redirect'] !== false)) {
+//     wp_safe_redirect(home_url("login?$new_login&login=failed&redirect=false"));
+//     exit();
+//   }
+// }
+// add_action( 'wp_login_failed', 'inesmktplc_redirect_if_login_fails' );
+
+
+function login_failed() {
+  $login_page  = home_url( '/login/' );
+  wp_redirect( $login_page . '?login=failed' );
+  exit;
+}
+add_action( 'wp_login_failed', 'login_failed' );
+ 
+function verify_username_password( $user, $username, $password ) {
+  $login_page  = home_url( '/login/' );
+    if( $username == "" || $password == "" ) {
+        wp_redirect( $login_page . "?login=empty" );
+        exit;
+    }
+}
+add_filter( 'authenticate', 'verify_username_password', 1, 3);
+
+
+
 
 
 // redirect user to homepage after login

@@ -1,4 +1,20 @@
 <?php
+/**
+ * This template displays home page
+ * got several harcoded parts
+ * 
+ * 
+ * 
+ * @package Ines CRM Marketplace
+ * @subpackage inesmktplc
+ * @since version 0.1.0
+ */
+?>
+
+
+
+
+<?php
 //get the shop page url to use it in link below
 $shop_page_url = get_permalink( wc_get_page_id( 'shop' ) );
 ?>
