@@ -3,16 +3,15 @@
  * INES CRM MARKETPLACE 
  * functions and definitions
  *
- * @since 1.0
+ * @since 0.1.0
  */
 
 /**
  *  SETUP
  */
 
-
-
-
+/* -------------------------------------------------------------
+------------------------------------------------------------- */
 
 
 /**
@@ -31,8 +30,8 @@ require_once(get_template_directory() . '/inc/wp-bootstrap-navwalker.php');
 require_once(get_template_directory() . '/inc/libs/class-tgm-plugin-activation.php');
 include(get_template_directory() . '/inc/inesmktplc-register-required-plugins.php');
 
-
-
+/* -------------------------------------------------------------
+------------------------------------------------------------- */
 
 /**
  *  HOOKS
@@ -55,7 +54,6 @@ add_action('widgets_init', 'inesmktplc_sidebar_footer_2');
 add_action('widgets_init', 'inesmktplc_sidebar_footer_3');
 add_action('widgets_init', 'inesmktplc_sidebar_footer_4');
 // add_action('widgets_init', 'inesmktplc_sidebar_wc_single_product');
-
 
 // start widgets
 add_action('widgets_init', 'inesmktplc_widget_init');
@@ -141,10 +139,6 @@ add_action('woocommerce_after_shop_loop', 'woocommerce_pagination', 20);
 // add ending container and section tags to shop page
 add_action('woocommerce_after_shop_loop', 'inesmktplc_wc_shop_container_end', 30);
 
-
-
-
-
 /**
  * custom items per page dropdown
  * intended to shoy in products page
@@ -176,22 +170,16 @@ function inesmktplc_pre_get_products_query($query)
   }
 }
 
-
-
-
-
-
-
-
-
-
+/* -------------------------------------------------------------
+------------------------------------------------------------- */
 
 
 /**
  *  SHORTCODES
  */
 
-
+/* -------------------------------------------------------------
+------------------------------------------------------------- */
 
 
 /**
@@ -248,16 +236,15 @@ function inesmktplc_get_the_term_list_first_result($id, $taxonomy)
  * hide login page
  * to prevent attacks
  */
-function inesmktplc_redirect_to_nonexistent_page()
-{
-  $new_login =  'newlogin';
-  if (strpos($_SERVER['REQUEST_URI'], $new_login) === false) {
-    wp_safe_redirect(home_url('access-denied'), 302);
-    exit();
-  }
-}
-add_action('login_head', 'inesmktplc_redirect_to_nonexistent_page');
-
+// function inesmktplc_redirect_to_nonexistent_page()
+// {
+//   $new_login =  'newlogin';
+//   if (strpos($_SERVER['REQUEST_URI'], $new_login) === false) {
+//     wp_safe_redirect(home_url('access-denied'), 302);
+//     exit();
+//   }
+// }
+// add_action('login_head', 'inesmktplc_redirect_to_nonexistent_page');
 
 /**
  * send users to custom login url
@@ -288,7 +275,6 @@ add_action('init', 'inesmktplc_redirect_to_actual_login');
 // }
 // add_action( 'wp_login_failed', 'inesmktplc_redirect_if_login_fails' );
 
-
 function login_failed() {
   $login_page  = home_url( '/login/' );
   wp_redirect( $login_page . '?login=failed' );
@@ -305,10 +291,6 @@ function verify_username_password( $user, $username, $password ) {
 }
 add_filter( 'authenticate', 'verify_username_password', 1, 3);
 
-
-
-
-
 // redirect user to homepage after login
 function inesmktplc_redirect_upon_login()
 {
@@ -324,7 +306,6 @@ function inesmktplc_auto_redirect_after_logout()
   exit();
 }
 add_action('wp_logout', 'inesmktplc_auto_redirect_after_logout');
-
 
 /**
  * Customize login page
