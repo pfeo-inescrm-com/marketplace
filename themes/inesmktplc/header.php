@@ -58,15 +58,15 @@
                         <div class="h2 m-0 site-name text-sm-right"><?php bloginfo('name'); ?></div>
                         <!-- start .author-area logged-in -->
                         <?php
-                        if ( is_user_logged_in() ) :
-                            get_template_part( 'template-parts/author-area-loggedin' );
+                        // if ( is_user_logged_in() ) :
+                        //     get_template_part( 'template-parts/author-area-loggedin' );
                         ?>                        
                         <!-- end .author-area logged-in -->
-                        <?php else : ?>
+                        <?php //else : ?>
                         <!-- start .author-area .not_logged_in-->
-                        <?php get_template_part( 'template-parts/author-area-not-loggedin' ); ?>
+                        <?php //get_template_part( 'template-parts/author-area-not-loggedin' ); ?>
                         <!-- end .author-area not_logged_in -->
-                        <?php endif; ?>
+                        <?php //endif; ?>
                     </div>
                     <!-- end /.col-md-5 -->
                 </div>

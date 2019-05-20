@@ -1,6 +1,3 @@
-<?php
-?>
-
 <!--================================
         START SEARCH AREA
     =================================-->
@@ -31,25 +28,36 @@
                             //         the_post();
                             //         $subtitle = get_post_meta(get_the_ID(), 'subtitle', true);
                             //     endwhile;
-                                ?>
-                                <!-- <h3><?php //woocommerce_page_title(); ?></h3> -->
-                                <!-- <p><?php //echo 'sub is ' . $subtitle; ?></p> -->
-                                <h3>
-                                    <?php _e('Integrate <span>INES</span> with all your tools', 'inesmktplc');  ?>
-                                </h3>
-                                <!-- <br> -->
-                                <p>
-                                    <?php _e('Simply connect your <span>CRM</span> to your Tools', 'inesmktplc');  ?>
-                                </p>
-                            </div>
-                        <?php //endif; ?>
+                            ?>
+                            <!-- <h3></h3> -->
+                            <!-- <p></p> -->
+                            <h3>
+                                <?php _e('Integrate <span>INES</span> with all your tools', 'inesmktplc');  ?>
+                            </h3>
+                            <!-- <br> -->
+                            <p>
+                                <?php _e('Simply connect your <span>CRM</span> to your Tools', 'inesmktplc');  ?>
+                            </p>
+                        </div>
+                        <?php
+                        ?>
                         <div class="search__field">
                             <?php
                             get_template_part('template-parts/search-form-large');
                             ?>
                         </div>
                         <div class="breadcrumb-wrapper">
-                            <?php woocommerce_breadcrumb(); ?>
+                            <?php if (is_front_page()) : ?>
+                                <nav class="woocommerce-breadcrumb">
+                                    <li>
+                                        <a href="<?php echo home_url(); ?>">
+                                            <?php _e('Home', 'inesmktplc'); ?>
+                                        </a>
+                                    </li>
+                                </nav>
+                            <?php else : ?>
+                                <?php woocommerce_breadcrumb(); ?>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
